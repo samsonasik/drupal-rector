@@ -6,7 +6,6 @@ namespace DrupalRector\Drupal9\Rector\Deprecation;
 
 use DrupalRector\Utility\GetDeclaringSourceTrait;
 use PhpParser\Node;
-use Rector\NodeCollector\ScopeResolver\ParentClassScopeResolver;
 use Rector\Rector\AbstractRector;
 use Symplify\RuleDocGenerator\Contract\DocumentedRuleInterface;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
@@ -15,16 +14,6 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 final class GetRawContentRector extends AbstractRector implements DocumentedRuleInterface
 {
     use GetDeclaringSourceTrait;
-
-    /**
-     * @var ParentClassScopeResolver
-     */
-    protected $parentClassScopeResolver;
-
-    public function __construct(ParentClassScopeResolver $parentClassScopeResolver)
-    {
-        $this->parentClassScopeResolver = $parentClassScopeResolver;
-    }
 
     public function getRuleDefinition(): RuleDefinition
     {
